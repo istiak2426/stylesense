@@ -1,1 +1,1 @@
-export const API = "https://stylesense2426.herokuapp.com/api"
+export const API = "https://stylesense2427.onrender.com/api"
