@@ -1,1 +1,1 @@
-export const API = "https://stylesense2427.onrender.com/api"
+export const API = "https://stylesense242631.onrender.com/api"
