@@ -1,0 +1,113 @@
+/* .home-page {
+  background-color: #f9f9f9;
+  padding: 2rem;
+}
+
+.filters {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters h5 {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.my-3 {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  border-radius: 8px 8px 0 0;
+}
+
+.text-center {
+  font-size: 1.2rem;
+  color: #666;
+} */
+
+/* Home Page Layout */
+
+/* Home Layout */
+.home-layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Sidebar Filters */
+.sidebar {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.filter-section h5 {
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+  gap: 20px;
+}
+
+/* Message Container */
+.message-container {
+  margin: 10px 0;
+  text-align: center;
+  color: #ff4d4d;
+}
+
+.loading-text {
+  color: #555;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+/* Modern Styling */
+h5,
+.loading-text {
+  font-family: Arial, sans-serif;
+  color: #4a4a4a;
+}
+
+.filter-section,
+.products-container {
+  margin: 20px 0;
+  font-size: 0.9em;
+  color: #555;
+}
