@@ -25,6 +25,7 @@ const Card = ({ product, handleAddToCart }) => {
           alt={product.name}
           style={imgStyle}
           className="card-img-top"
+          loading="lazy"
         />
         <div className="card-body">
           <div style={{ minHeight: "3em" }}>
