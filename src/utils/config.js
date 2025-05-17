@@ -1,1 +1,4 @@
-export const API = "https://stylesense242631.onrender.com/api"
+export const API = process.env.REACT_APP_API_URL;
+
+
+ 

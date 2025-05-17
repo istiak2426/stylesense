@@ -13,6 +13,7 @@ import Cart from './order/Cart';
 import ShippingAddress from './order/ShippingAddress';
 import Checkout from './order/Checkout';
 import Payment from './order/Payment'
+import { ShowAllProducts } from './admin/ShowAllProducts';
 
 const Main = () => {
     return (
@@ -46,6 +47,12 @@ const Main = () => {
                 <AdminRoute exact path="/create/product">
                     <CreateProduct />
                 </AdminRoute>
+                <AdminRoute exact path="/admin/products">
+                    <ShowAllProducts />
+                </AdminRoute>
+
+
+
                 <Redirect to="/" />
             </Switch>
         </div>
