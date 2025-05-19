@@ -22,3 +22,15 @@ export const createProduct = (token, data) => {
 export const getCategories = () => {
     return axios.get(`${API}/category`)
 }
+
+
+
+export const deleteProduct = (token,productId) => {
+return axios.delete(`${API}/product/${productId}`, {
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+    }
+})
+}
+

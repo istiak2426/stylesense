@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import Layout from '../Layout';
 import { API } from '../../utils/config';
+
+import { deleteProduct } from '../../api/apiAdmin';
+
+import { userInfo } from '../../utils/auth';
 
 import {
   Container,
@@ -19,6 +23,12 @@ export const ShowAllProducts = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
+  const [deletingId, setDeletingId] = useState(null);
+
+
+  const { token } = userInfo();
+
+
 
   useEffect(() => {
     let isMounted = true;
@@ -46,6 +56,23 @@ export const ShowAllProducts = () => {
     return () => { isMounted = false; };
   }, []);
 
+
+  const handleDelete = (productId) => {
+  if (!window.confirm('Are you sure you want to delete this product?')) return;
+
+  setDeletingId(productId);
+  deleteProduct(token, productId)
+    .then((res) => {
+      const data = res.data;
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setProducts(products.filter((product) => product._id !== productId));
+      }
+    })
+    .catch(() => setError('Failed to delete product.'))
+    .finally(() => setDeletingId(null));
+};
   return (
     <Layout>
       <Container maxWidth="md" sx={{ mt: 4 }}>
@@ -79,7 +106,14 @@ export const ShowAllProducts = () => {
                       <Button size="small" href={`/product/${product._id}`}>
                         View
                       </Button>
-                      {/* You can add more actions like Edit/Delete here */}
+                      <Button
+                        size="small"
+                        color="error"
+                        onClick={() => handleDelete(product._id)}
+                        disabled={deletingId === product._id}
+                      >
+                        {deletingId === product._id ? <CircularProgress size={20} /> : 'Delete'}
+                      </Button>
                     </CardActions>
                   </Card>
                 </Grid>
